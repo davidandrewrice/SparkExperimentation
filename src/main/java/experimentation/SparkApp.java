@@ -16,9 +16,14 @@ public class SparkApp {
                 log.info("Processing request: " + req.body());
                 return req.body();
                 });
+        
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                log.info("Server finishing...");
+            }
+        }));
 
-        awaitStop();
 
-        log.info("Server finishing...");
     }
 }
