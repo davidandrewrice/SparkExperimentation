@@ -9,7 +9,13 @@ public class SparkApp {
     public static void main(String[] args) {
         log.info("Starting server...");
 
-        get("/hello", (req, res) -> "Hello world!");
+        port(8080);
+
+        post("/hello", (req, res) -> {
+
+                log.info("Processing request: " + req.body());
+                return req.body();
+                });
 
         awaitStop();
 
