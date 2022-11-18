@@ -11,12 +11,16 @@ public class SparkApp {
 
         port(8080);
 
-        post("/hello", (req, res) -> {
+        get("/ping", ((req, res) -> "healthy"));
+
+        get("/hello", ((req, res) -> "hi there!!"));
+        
+        post("/echo", (req, res) -> {
 
                 log.info("Processing request: " + req.body());
                 return req.body();
                 });
-        
+
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
