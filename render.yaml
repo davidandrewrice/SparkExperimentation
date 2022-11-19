@@ -11,4 +11,4 @@ services:
     name: spark-redis
     plan: free
     ipAllowList: []
-    region: frankfurt
+    region: oregon
