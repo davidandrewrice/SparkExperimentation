@@ -14,7 +14,7 @@ public class SparkApp {
         get("/ping", ((req, res) -> "healthy"));
 
         get("/hello", ((req, res) -> "hi there!!"));
-        
+
         post("/echo", (req, res) -> {
 
                 log.info("Processing request: " + req.body());
