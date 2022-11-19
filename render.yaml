@@ -7,3 +7,8 @@ services:
     plan: starter # optional (defaults to starter)
     branch: main # optional (defaults to master)
     healthCheckPath: /ping
+  - type: redis
+    name: spark-redis
+    plan: free
+    ipAllowList: []
+    region: frankfurt
